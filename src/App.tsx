@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -20,35 +21,46 @@ import { LanguageProvider } from "./context/LanguageContext";
 function App() {
   return (
     <LanguageProvider>
+
       <BrowserRouter>
 
+        {/* NAVBAR */}
         <Navbar />
 
-        <div className="pt-20">
+        {/* MAIN CONTENT */}
+        <div className="pt-20 min-h-screen flex flex-col">
 
-          <Routes>
+          <div className="flex-grow">
 
-            {/* MAIN PAGES */}
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/contact" element={<Contact />} />
+            <Routes>
 
-            {/* PROJECT DETAIL PAGES */}
-            <Route path="/tree-plantation" element={<TreePlantation />} />
-            <Route path="/school-awareness" element={<SchoolAwareness />} />
-            <Route path="/clean-environment" element={<CleanEnvironment />} />
-            <Route path="/green-city" element={<GreenCity />} />
-            <Route path="/rural-plantation" element={<RuralPlantation />} />
-            <Route path="/plastic-free" element={<PlasticFree />} />
+              {/* MAIN PAGES */}
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/contact" element={<Contact />} />
 
-          </Routes>
+              {/* PROJECT DETAIL PAGES */}
+              <Route path="/tree-plantation" element={<TreePlantation />} />
+              <Route path="/school-awareness" element={<SchoolAwareness />} />
+              <Route path="/clean-environment" element={<CleanEnvironment />} />
+              <Route path="/green-city" element={<GreenCity />} />
+              <Route path="/rural-plantation" element={<RuralPlantation />} />
+              <Route path="/plastic-free" element={<PlasticFree />} />
+
+            </Routes>
+
+          </div>
+
+          {/* FOOTER */}
+          <Footer />
 
         </div>
 
       </BrowserRouter>
+
     </LanguageProvider>
   );
 }
