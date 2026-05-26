@@ -35,7 +35,7 @@ function Navbar() {
 
         {/* Logo */}
         <h1 className="text-2xl font-bold">
-          🌱 Greenverse
+          🌱 Greenverse NGO
         </h1>
 
         {/* Desktop Menu */}
