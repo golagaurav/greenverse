@@ -4,91 +4,79 @@ function About() {
   const { lang } = useLang();
 
   return (
-    <div className="bg-green-50 min-h-screen font-sans">
+    <div className="bg-gradient-to-b from-green-50 to-white min-h-screen font-sans">
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-green-900 via-green-700 to-green-500 text-white text-center py-24 px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-950 via-green-800 to-emerald-500 text-white py-28 px-6">
 
-        <h1 className="text-5xl md:text-6xl font-extrabold">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-green-300/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl"></div>
 
-          {lang === "en"
-            ? "🌿 About Greenverse"
-            : "🌿 Greenverse के बारे में"}
+        <div className="relative max-w-6xl mx-auto text-center">
 
-        </h1>
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
+            {lang === "en"
+              ? "🌿 About Greenverse"
+              : "🌿 Greenverse के बारे में"}
+          </h1>
 
-        <p className="mt-6 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg md:text-2xl max-w-4xl mx-auto text-green-100 leading-relaxed">
+            {lang === "en"
+              ? "Greenverse is a community-driven movement dedicated to restoring nature, planting trees, and building a sustainable future."
+              : "Greenverse एक सामुदायिक अभियान है जो प्रकृति संरक्षण, वृक्षारोपण और सतत भविष्य निर्माण के लिए समर्पित है।"}
+          </p>
 
-          {lang === "en"
-            ? "Greenverse is a movement dedicated to protecting nature, planting trees, and creating a greener future for everyone."
-            : "Greenverse एक ऐसा अभियान है जो प्रकृति संरक्षण, वृक्षारोपण और हरित भविष्य बनाने के लिए समर्पित है।"}
-
-        </p>
-
+        </div>
       </section>
 
-      {/* ABOUT CONTENT */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
+      {/* ABOUT SECTION */}
+      <section className="max-w-6xl mx-auto py-24 px-6">
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
 
-          {/* LEFT IMAGE */}
           <div>
-
             <img
               src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
               alt="Nature"
-              className="rounded-3xl shadow-2xl w-full h-[400px] object-cover hover:scale-105 transition duration-500"
+              className="rounded-3xl shadow-2xl w-full h-[450px] object-cover hover:scale-105 transition duration-500"
             />
-
           </div>
 
-          {/* RIGHT TEXT */}
           <div>
 
-            <h2 className="text-4xl font-bold text-green-800 leading-tight">
+            <span className="text-green-600 font-semibold tracking-wider uppercase">
+              {lang === "en" ? "Who We Are" : "हम कौन हैं"}
+            </span>
 
+            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-4">
               {lang === "en"
                 ? "Together We Can Save Earth 🌍"
                 : "मिलकर हम धरती को बचा सकते हैं 🌍"}
-
             </h2>
 
             <p className="mt-6 text-gray-700 text-lg leading-relaxed">
-
               {lang === "en"
-                ? "Greenverse works with volunteers, students, and communities to spread awareness about environmental protection and organize plantation drives across villages and cities."
-                : "Greenverse स्वयंसेवकों, छात्रों और समुदायों के साथ मिलकर पर्यावरण संरक्षण के प्रति जागरूकता फैलाने और गाँवों व शहरों में वृक्षारोपण अभियान चलाने का कार्य करता है।"}
-
+                ? "We work with volunteers, students, and local communities to spread environmental awareness and organize tree plantation drives across cities and villages."
+                : "हम स्वयंसेवकों, छात्रों और समुदायों के साथ मिलकर पर्यावरण जागरूकता फैलाने और वृक्षारोपण अभियान चलाने का कार्य करते हैं।"}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="grid grid-cols-2 gap-6 mt-10">
 
-              <div className="bg-white shadow-lg px-6 py-4 rounded-2xl">
-                <h3 className="text-3xl font-bold text-green-700">
+              <div className="bg-white p-6 rounded-3xl shadow-lg">
+                <h3 className="text-4xl font-bold text-green-700">
                   10K+
                 </h3>
-
-                <p className="text-gray-600">
-
-                  {lang === "en"
-                    ? "Trees Planted"
-                    : "लगाए गए पेड़"}
-
+                <p className="text-gray-600 mt-2">
+                  {lang === "en" ? "Trees Planted" : "लगाए गए पेड़"}
                 </p>
               </div>
 
-              <div className="bg-white shadow-lg px-6 py-4 rounded-2xl">
-                <h3 className="text-3xl font-bold text-green-700">
+              <div className="bg-white p-6 rounded-3xl shadow-lg">
+                <h3 className="text-4xl font-bold text-green-700">
                   50+
                 </h3>
-
-                <p className="text-gray-600">
-
-                  {lang === "en"
-                    ? "Communities"
-                    : "समुदाय"}
-
+                <p className="text-gray-600 mt-2">
+                  {lang === "en" ? "Communities" : "समुदाय"}
                 </p>
               </div>
 
@@ -101,52 +89,38 @@ function About() {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section className="max-w-6xl mx-auto px-6 pb-24">
 
         <div className="grid md:grid-cols-2 gap-8">
 
-          {/* MISSION */}
-          <div className="bg-white shadow-xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+          <div className="bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 transition-all">
 
             <div className="text-6xl">🎯</div>
 
             <h2 className="text-3xl font-bold text-green-700 mt-4">
-
-              {lang === "en"
-                ? "Our Mission"
-                : "हमारा मिशन"}
-
+              {lang === "en" ? "Our Mission" : "हमारा मिशन"}
             </h2>
 
-            <p className="mt-4 text-gray-600 leading-relaxed text-lg">
-
+            <p className="mt-4 text-gray-600 text-lg leading-relaxed">
               {lang === "en"
-                ? "To inspire every individual to plant trees, reduce pollution, and actively participate in environmental conservation."
-                : "हर व्यक्ति को पेड़ लगाने, प्रदूषण कम करने और पर्यावरण संरक्षण में सक्रिय भागीदारी के लिए प्रेरित करना।"}
-
+                ? "To inspire every individual to plant trees, reduce pollution and actively contribute to environmental conservation."
+                : "हर व्यक्ति को वृक्षारोपण, प्रदूषण नियंत्रण और पर्यावरण संरक्षण के लिए प्रेरित करना।"}
             </p>
 
           </div>
 
-          {/* VISION */}
-          <div className="bg-white shadow-xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+          <div className="bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 transition-all">
 
-            <div className="text-6xl">🌍</div>
+            <div className="text-6xl">🌎</div>
 
             <h2 className="text-3xl font-bold text-green-700 mt-4">
-
-              {lang === "en"
-                ? "Our Vision"
-                : "हमारा विजन"}
-
+              {lang === "en" ? "Our Vision" : "हमारा विजन"}
             </h2>
 
-            <p className="mt-4 text-gray-600 leading-relaxed text-lg">
-
+            <p className="mt-4 text-gray-600 text-lg leading-relaxed">
               {lang === "en"
-                ? "To build a greener, healthier, and pollution-free world for future generations."
-                : "आने वाली पीढ़ियों के लिए एक हरित, स्वस्थ और प्रदूषण मुक्त दुनिया बनाना।"}
-
+                ? "A greener, healthier and pollution-free world for future generations."
+                : "आने वाली पीढ़ियों के लिए हरित, स्वस्थ और प्रदूषण मुक्त दुनिया बनाना।"}
             </p>
 
           </div>
@@ -155,94 +129,64 @@ function About() {
 
       </section>
 
-      {/* TEAM SECTION */}
-      <section className="bg-white py-20 px-6">
+      {/* TEAM */}
+      <section className="bg-green-50 py-24 px-6">
 
         <div className="max-w-6xl mx-auto text-center">
 
-          <h2 className="text-4xl font-bold text-green-800">
-
+          <h2 className="text-4xl md:text-5xl font-bold text-green-900">
             {lang === "en"
               ? "💚 Our Volunteers"
               : "💚 हमारे स्वयंसेवक"}
-
           </h2>
 
           <p className="mt-4 text-gray-600 text-lg">
-
             {lang === "en"
-              ? "Passionate people working together to protect nature."
-              : "प्रकृति संरक्षण के लिए साथ मिलकर काम करने वाले उत्साही लोग।"}
-
+              ? "Passionate people creating positive environmental impact."
+              : "पर्यावरण संरक्षण के लिए समर्पित प्रेरणादायक लोग।"}
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-3 gap-8 mt-14">
 
-            <div className="bg-green-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
+            {[
+              {
+                name: "Rahul",
+                roleEn: "Tree Plantation Leader",
+                roleHi: "वृक्षारोपण प्रमुख",
+                img: "https://randomuser.me/api/portraits/men/32.jpg",
+              },
+              {
+                name: "Priya",
+                roleEn: "Awareness Coordinator",
+                roleHi: "जागरूकता समन्वयक",
+                img: "https://randomuser.me/api/portraits/women/44.jpg",
+              },
+              {
+                name: "Aman",
+                roleEn: "Environment Activist",
+                roleHi: "पर्यावरण कार्यकर्ता",
+                img: "https://randomuser.me/api/portraits/men/67.jpg",
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all"
+              >
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-32 h-32 rounded-full mx-auto border-4 border-green-600"
+                />
 
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Volunteer"
-                className="w-28 h-28 rounded-full mx-auto border-4 border-green-600"
-              />
+                <h3 className="mt-5 text-2xl font-bold text-green-700">
+                  {member.name}
+                </h3>
 
-              <h3 className="mt-4 text-2xl font-bold text-green-700">
-                Rahul
-              </h3>
-
-              <p className="text-gray-600 mt-2">
-
-                {lang === "en"
-                  ? "Tree Plantation Leader"
-                  : "वृक्षारोपण प्रमुख"}
-
-              </p>
-
-            </div>
-
-            <div className="bg-green-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
-
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Volunteer"
-                className="w-28 h-28 rounded-full mx-auto border-4 border-green-600"
-              />
-
-              <h3 className="mt-4 text-2xl font-bold text-green-700">
-                Priya
-              </h3>
-
-              <p className="text-gray-600 mt-2">
-
-                {lang === "en"
-                  ? "Awareness Coordinator"
-                  : "जागरूकता समन्वयक"}
-
-              </p>
-
-            </div>
-
-            <div className="bg-green-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
-
-              <img
-                src="https://randomuser.me/api/portraits/men/67.jpg"
-                alt="Volunteer"
-                className="w-28 h-28 rounded-full mx-auto border-4 border-green-600"
-              />
-
-              <h3 className="mt-4 text-2xl font-bold text-green-700">
-                Aman
-              </h3>
-
-              <p className="text-gray-600 mt-2">
-
-                {lang === "en"
-                  ? "Environment Activist"
-                  : "पर्यावरण कार्यकर्ता"}
-
-              </p>
-
-            </div>
+                <p className="text-gray-600 mt-2">
+                  {lang === "en" ? member.roleEn : member.roleHi}
+                </p>
+              </div>
+            ))}
 
           </div>
 
@@ -250,32 +194,43 @@ function About() {
 
       </section>
 
-      {/* CTA SECTION */}
-      <section className="bg-gradient-to-r from-green-800 to-green-600 text-white text-center py-20 px-6">
+      {/* PREMIUM CTA */}
+      <section className="relative overflow-hidden py-28 px-6">
 
-        <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-800 to-lime-500"></div>
 
-          {lang === "en"
-            ? "🌱 Be Part of the Change"
-            : "🌱 बदलाव का हिस्सा बनें"}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-300/10 rounded-full blur-3xl"></div>
 
-        </h2>
+        <div className="relative max-w-5xl mx-auto">
 
-        <p className="mt-6 text-lg max-w-2xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-[40px] p-12 text-center shadow-2xl">
 
-          {lang === "en"
-            ? "Together we can make the Earth greener and healthier."
-            : "मिलकर हम धरती को अधिक हरा-भरा और स्वस्थ बना सकते हैं।"}
+            <span className="inline-block px-5 py-2 rounded-full bg-white/20 text-white font-semibold">
+              🌍 Green Future Starts Today
+            </span>
 
-        </p>
+            <h2 className="mt-6 text-4xl md:text-6xl font-extrabold text-white leading-tight">
+              {lang === "en"
+                ? "Plant Hope, Grow Tomorrow 🌱"
+                : "आशा बोएं, भविष्य उगाएं 🌱"}
+            </h2>
 
-        <button className="mt-8 bg-white text-green-700 px-8 py-4 rounded-full font-bold hover:scale-105 hover:bg-yellow-100 transition duration-300 shadow-lg">
+            <p className="mt-6 text-lg md:text-xl text-green-100 max-w-3xl mx-auto">
+              {lang === "en"
+                ? "Join thousands of nature lovers and help create a cleaner, greener and healthier planet."
+                : "हजारों प्रकृति प्रेमियों के साथ जुड़ें और एक स्वच्छ, हरित एवं स्वस्थ पृथ्वी के निर्माण में योगदान दें।"}
+            </p>
 
-          {lang === "en"
-            ? "Join Greenverse"
-            : "Greenverse से जुड़ें"}
+            <button className="mt-10 bg-white text-green-700 px-10 py-4 rounded-full text-lg font-bold hover:scale-105 hover:bg-yellow-100 transition-all duration-300 shadow-xl">
+              {lang === "en"
+                ? "🚀 Join The Movement"
+                : "🚀 अभियान से जुड़ें"}
+            </button>
 
-        </button>
+          </div>
+
+        </div>
 
       </section>
 
